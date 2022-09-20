@@ -1,26 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_api/view/home_screen.dart';
+import 'package:flutter_rest_api/utils/routes/routes.dart';
+import 'package:flutter_rest_api/utils/routes/routes_name.dart';
+import 'package:flutter_rest_api/view_model/auth_view_model.dart';
+import 'package:flutter_rest_api/view_model/user_view_model.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Rest API',
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.deepOrange,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthViewModel()),
+        ChangeNotifierProvider(create: (_) => UserViewModel())
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: RoutesName.splash,
+        onGenerateRoute: Routes.generateRoute,
       ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        primarySwatch: Colors.deepOrange,
-      ),
-      home: const HomeScreen(),
     );
   }
 }
