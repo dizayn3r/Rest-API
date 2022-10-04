@@ -27,7 +27,7 @@ class NetworkApiService extends BaseApiServices {
 
 
   @override
-  Future getPostApiResponse(String url , dynamic data) async{
+  Future getPostApiResponse(String url ,  data) async{
 
     dynamic responseJson ;
     try {
@@ -35,7 +35,7 @@ class NetworkApiService extends BaseApiServices {
       Response response = await post(
         Uri.parse(url),
         body: data
-      ).timeout(Duration(seconds: 10));
+      ).timeout(const Duration(seconds: 10));
 
       responseJson = returnResponse(response);
     }on SocketException {
@@ -58,7 +58,7 @@ class NetworkApiService extends BaseApiServices {
       case 404:
         throw UnauthorisedException(response.body.toString());
       default:
-        throw FetchDataException('Error accured while communicating with server'+
+        throw FetchDataException('Error occurred while communicating with server'+
             'with status code' +response.statusCode.toString());
 
     }
