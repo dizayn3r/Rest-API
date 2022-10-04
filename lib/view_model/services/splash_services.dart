@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rest_api/model/user_model.dart';
-import 'package:flutter_rest_api/utils/routes/routes_name.dart';
 import 'package:flutter_rest_api/view_model/user_view_model.dart';
+
+import '../../utils/Routes/routes_name.dart';
 
 class SplashServices {
   Future<UserModel> getUserDate() => UserViewModel().getUser();
@@ -19,9 +20,7 @@ class SplashServices {
         Navigator.pushNamed(context, RoutesName.home);
       }
     }).onError((error, stackTrace) {
-      if (kDebugMode) {
-        print(error.toString());
-      }
+      print(error.toString());
     });
   }
 }

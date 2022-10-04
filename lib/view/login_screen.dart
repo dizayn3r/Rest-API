@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_api/res/components/round_button.dart';
-import 'package:flutter_rest_api/utils/routes/routes_name.dart';
 import 'package:flutter_rest_api/utils/utils.dart';
 import 'package:flutter_rest_api/view_model/auth_view_model.dart';
 import 'package:provider/provider.dart';
+
+import '../res/Components/round_button.dart';
+import '../utils/Routes/routes_name.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 

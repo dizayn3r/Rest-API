@@ -4,10 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_rest_api/model/user_model.dart';
 import 'package:flutter_rest_api/repository/auth_repository.dart';
-import 'package:flutter_rest_api/utils/routes/routes_name.dart';
 import 'package:flutter_rest_api/utils/utils.dart';
 import 'package:flutter_rest_api/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
+
+import '../utils/Routes/routes_name.dart';
 
 class AuthViewModel with ChangeNotifier {
 

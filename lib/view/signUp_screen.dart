@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_api/res/components/round_button.dart';
-import 'package:flutter_rest_api/utils/routes/routes_name.dart';
 import 'package:flutter_rest_api/utils/utils.dart';
 import 'package:flutter_rest_api/view_model/auth_view_model.dart';
 import 'package:provider/provider.dart';
+
+import '../res/Components/round_button.dart';
+import '../utils/Routes/routes_name.dart';
 
 
 class SignUpScreen extends StatefulWidget {
@@ -15,10 +16,10 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
 
-  ValueNotifier<bool> _obsecurePassword = ValueNotifier<bool>(true);
+  final ValueNotifier<bool> _obsecurePassword = ValueNotifier<bool>(true);
 
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   FocusNode emailFocusNode = FocusNode();
   FocusNode passwordFocusNode = FocusNode();
@@ -45,7 +46,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final height  = MediaQuery.of(context).size.height * 1 ;
     return Scaffold(
       appBar: AppBar(
-        title: Text('SingUp'),
+        title: const Text('Sign Up'),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -62,7 +63,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   labelText: 'Email',
                   prefixIcon: Icon(Icons.alternate_email)
               ),
-              onFieldSubmitted: (valu){
+              onFieldSubmitted: (value){
                 Utils.fieldFocusChange(context, emailFocusNode, passwordFocusNode);
               },
             ),
@@ -78,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     decoration: InputDecoration(
                       hintText: 'Password',
                       labelText: 'Password',
-                      prefixIcon: Icon(Icons.lock_open_rounded),
+                      prefixIcon: const Icon(Icons.lock_open_rounded),
                       suffixIcon: InkWell(
                           onTap: (){
                             _obsecurePassword.value = !_obsecurePassword.value ;

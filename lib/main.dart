@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rest_api/utils/routes/routes.dart';
-import 'package:flutter_rest_api/utils/routes/routes_name.dart';
+import 'package:flutter_rest_api/utils/Routes/routes.dart';
+import 'package:flutter_rest_api/utils/Routes/routes_name.dart';
 import 'package:flutter_rest_api/view_model/auth_view_model.dart';
 import 'package:flutter_rest_api/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
